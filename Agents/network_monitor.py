@@ -41,7 +41,9 @@ class NetworkMonitoringAgent:
         self.packet_rate_threshold = 100   # packets from one IP before flagging
         self.port_scan_threshold = 10      # unique ports in window before flagging
         self.scan_time_window = 10         # seconds
+   from log_analysis_agent import RealTimeLogAnalysisAgent
 
+log_agent = RealTimeLogAnalysisAgent()
     def generate_alert(self, alert_type, severity, src_ip=None, dst_ip=None, port=None, protocol=None, reason=None):
         alert = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
